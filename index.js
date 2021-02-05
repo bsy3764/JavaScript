@@ -98,15 +98,55 @@ function handleClick(){
 title.addEventListener("click", handleClick);   // HTML에서 id가 title인 것을 클릭하면
 */
 
-
+/*
 // 사용자에게 물어보기
 const age = prompt("How old are you?");
 console.log(age)
 // if ~ else
 if(age > 18){
     console.log("adult");
-} else if (8 < age && age <= 18) {
+} else if (8 < age || age >= 18) {
     console.log("child");
 } else {
     console.log("baby");
 }
+*/
+
+/*
+const title = document.querySelector("#title");
+const BASE_COLOR = "rgb(52, 73, 94)";   // RGB형태니까 작동됨;;;
+const OTHER_COLOR = "#7f8c8d";
+function handleClick(){
+    const currentColor = title.style.color;
+    if (currentColor === BASE_COLOR){
+        title.style.color = OTHER_COLOR;
+    } else {
+        title.style.color = BASE_COLOR;
+    }
+}
+function init(){
+    title.style.color = BASE_COLOR;
+    title.addEventListener("click", handleClick);
+}
+init();
+*/
+
+
+// CSS가 스타일을 처리하도록 분리하기
+const title = document.querySelector("#title");
+const CLICKED_CLASS = "clicked";
+function handleClick(){
+    const hasClass = title.classList.contains(CLICKED_CLASS);   // True, False를 반환함
+    if(!hasClass){  
+        title.classList.add(CLICKED_CLASS);
+    } else {
+        title.classList.remove(CLICKED_CLASS);
+    }
+}
+// function handleClick(){  // 위의 내용과 같음
+//     title.classList.toggle(CLICKED_CLASS);
+// }
+function init(){
+    title.addEventListener("click", handleClick);
+}
+init();

@@ -3,14 +3,34 @@
 
 <head>
 	<title>first</title>
+	<meta charset="utf-8" />
 	<!-- CSS파일 추가 -->
 	<link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-	<h1 id="title">This Work</h1>
+	<!-- <h1 id="title" class="btn">This Work</h1> -->
+	<div class="js-clock">
+		<h1>00:00</h1>
+	</div>
+	<form class="js-form form">
+		<input type="text" placeholder="what is your name?" />
+	</form>
+	<h4 class="js-greetings greetings"></h4>
+	<form class="js-toDoForm">
+		<input type="text" placeholder="write a to do" />
+	</form>
+	<ul class="js-toDoList">
+	</ul>
+	<span class="js-weather"></span>
 	<!-- JS파일은 body태그의 맨 아래에 위치함 -->
-	<script src="index.js"></script>
+	<!-- <script src="index.js"></script> -->
+	<script src="clock.js"></script>
+	<script src="gretting.js"></script>
+	<script src="todo.js"></script>
+	<script src="bg.js"></script>
+	<script src="weather.js"></script>
+
 </body>
 
 </html>
